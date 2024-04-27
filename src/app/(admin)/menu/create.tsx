@@ -1,10 +1,21 @@
 import Button from "@/components/Button";
 import { defaultPizzaImage } from "@/components/ProductListItem";
 import Colors from "@/constants/Colors";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { View, Text, StyleSheet, TextInput, Image, Alert } from "react-native";
 import * as ImagePicker from "expo-image-picker";
-import { Stack, useLocalSearchParams } from "expo-router";
+import { Stack, useLocalSearchParams, useRouter } from "expo-router";
+import {
+  useDeleteProduct,
+  useInsertProduct,
+  useProduct,
+  useUpdateProduct,
+} from "@/api/products";
+
+import * as FileSystem from "expo-file-system";
+import { randomUUID } from "expo-crypto";
+import { supabase } from "@/lib/supabase";
+import { decode } from "base64-arraybuffer";
 
 const CreateProductScreen = () => {
   const [name, setName] = useState("");
@@ -12,8 +23,26 @@ const CreateProductScreen = () => {
   const [errors, setErrors] = useState("");
   const [image, setImage] = useState<string | null>(null);
 
-  const { id } = useLocalSearchParams();
-  const isUpdating = !!id;
+  const { id: idString } = useLocalSearchParams();
+  const id = parseFloat(
+    typeof idString === "string" ? idString : idString?.[0]
+  );
+  const isUpdating = !!idString;
+
+  const { mutate: insertProduct } = useInsertProduct();
+  const { mutate: updateProduct } = useUpdateProduct();
+  const { data: updatingProduct } = useProduct(id);
+  const { mutate: deleteProduct } = useDeleteProduct();
+
+  const router = useRouter();
+
+  useEffect(() => {
+    if (updatingProduct) {
+      setName(updatingProduct.name);
+      setPrice(updatingProduct.price.toString());
+      setImage(updatingProduct.image);
+    }
+  }, [updatingProduct]);
 
   const resetFields = () => {
     setName("");
@@ -40,34 +69,47 @@ const CreateProductScreen = () => {
   const onSubmit = () => {
     if (isUpdating) {
       // update
-      onUpdateCreate();
+      onUpdate();
     } else {
       onCreate();
     }
   };
 
-  const onCreate = () => {
+  const onCreate = async () => {
     if (!validateInput()) {
       return;
     }
 
-    console.warn("Creating product: ", name);
+    const imagePath = await uploadImage();
 
     // Save in the database
-
-    resetFields();
+    insertProduct(
+      { name, price: parseFloat(price), image: imagePath },
+      {
+        onSuccess: () => {
+          resetFields();
+          router.back();
+        },
+      }
+    );
   };
 
-  const onUpdateCreate = () => {
+  const onUpdate = async () => {
     if (!validateInput()) {
       return;
     }
 
-    console.warn("Updating product: ");
+    const imagePath = await uploadImage();
 
-    // Save in the database
-
-    resetFields();
+    updateProduct(
+      { id, name, price: parseFloat(price), image: imagePath },
+      {
+        onSuccess: () => {
+          resetFields();
+          router.back();
+        },
+      }
+    );
   };
 
   const pickImage = async () => {
@@ -83,8 +125,14 @@ const CreateProductScreen = () => {
       setImage(result.assets[0].uri);
     }
   };
+
   const onDelete = () => {
-    console.warn("DELETE!!!!!!!");
+    deleteProduct(id, {
+      onSuccess: () => {
+        resetFields();
+        router.replace("/(admin)");
+      },
+    });
   };
 
   const confirmDelete = () => {
@@ -98,6 +146,28 @@ const CreateProductScreen = () => {
         onPress: onDelete,
       },
     ]);
+  };
+
+  const uploadImage = async () => {
+    if (!image?.startsWith("file://")) {
+      return;
+    }
+
+    const base64 = await FileSystem.readAsStringAsync(image, {
+      encoding: "base64",
+    });
+    const filePath = `${randomUUID()}.png`;
+    const contentType = "image/png";
+
+    const { data, error } = await supabase.storage
+      .from("product-images")
+      .upload(filePath, decode(base64), { contentType });
+
+    console.log(error);
+
+    if (data) {
+      return data.path;
+    }
   };
 
   return (
@@ -142,6 +212,7 @@ const CreateProductScreen = () => {
   );
 };
 
+export default CreateProductScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -172,5 +243,3 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
 });
-
-export default CreateProductScreen;
