@@ -1,6 +1,7 @@
 import { useOrderDetails, useUpdateOrder } from "@/api/orders";
 import OrderItemListItem from "@/components/OrderItemListItem";
 import OrderListItem from "@/components/OrderListItem";
+import { notifyUserAboutOrderUpdate } from "@/lib/notifications";
 import Colors from "@/constants/Colors";
 import { OrderStatusList } from "@/types";
 import orders from "@assets/data/orders";
@@ -20,8 +21,14 @@ export default function OrderDetailsScreen() {
   const { data: order, isLoading, error } = useOrderDetails(id);
   const { mutate: updateOrder } = useUpdateOrder();
 
-  const updateStatus = (status: string) => {
-    updateOrder({ id: id, updatedFields: { status } });
+  const updateStatus = async (status: string) => {
+    await updateOrder({
+      id: id,
+      updatedFields: { status },
+    });
+    if (order) {
+      await notifyUserAboutOrderUpdate({ ...order, status });
+    }
   };
 
   if (isLoading) {
