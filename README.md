@@ -52,41 +52,45 @@ HotBox is an application to order pizza online. It lets admins create and update
 
 ## Screenshots
 
-### Home Page
+<div style="display: flex; flex-wrap: wrap;">
 
-<img src="/assets/images/1.jpg" alt="Image 1" style="float:left; margin-right: 10px;" />
+  <div style="flex: 0 0 auto; margin-right: 10px;">
+    <img src="/assets/images/1.jpg" alt="Image 1" style="max-width: 200px; max-height: 200px;" />
+  </div>
 
-### Company Details Page
+  <div style="flex: 0 0 auto; margin-right: 10px;">
+    <img alt="Company Details Page" src="/assets/images/2.jpg" style="max-width: 200px; max-height: 200px;">
+  </div>
 
-<img alt="Company Details Page" src="/assets/images/2.jpg">
+  <div style="flex: 0 0 auto; margin-right: 10px;">
+    <img alt="Line Chart" src="/assets/images/3.jpg" style="max-width: 200px; max-height: 200px;">
+  </div>
 
-### Line Chart
+  <div style="flex: 0 0 auto; margin-right: 10px;">
+    <img alt="Area Chart" src="/assets/images/4.jpg" style="max-width: 200px; max-height: 200px;">
+  </div>
 
-<img alt="Line Chart" src="/assets/images/3.jpg">
+  <div style="flex: 0 0 auto; margin-right: 10px;">
+    <img alt="Search Functionality" src="/assets/images/5.jpg" style="max-width: 200px; max-height: 200px;">
+  </div>
 
-### Area Chart
+  <div style="flex: 0 0 auto; margin-right: 10px;">
+    <img alt="Search Functionality" src="/assets/images/6.jpg" style="max-width: 200px; max-height: 200px;">
+  </div>
 
-<img alt="Area Chart" src="/assets/images/4.jpg">
+  <div style="flex: 0 0 auto; margin-right: 10px;">
+    <img alt="Search Functionality" src="/assets/images/7.jpg" style="max-width: 200px; max-height: 200px;">
+  </div>
 
-### Search Functionality
+  <div style="flex: 0 0 auto; margin-right: 10px;">
+    <img alt="Search Functionality" src="/assets/images/8.jpg" style="max-width: 200px; max-height: 200px;">
+  </div>
 
-<img alt="Search Functionality" src="/assets/images/5.jpg">
+  <div style="flex: 0 0 auto; margin-right: 10px;">
+    <img alt="Search Functionality" src="/assets/images/9.jpg" style="max-width: 200px; max-height: 200px;">
+  </div>
 
-### Search Functionality
-
-<img alt="Search Functionality" src="/assets/images/6.jpg">
-
-### Search Functionality
-
-<img alt="Search Functionality" src="/assets/images/7.jpg">
-
-### Search Functionality
-
-<img alt="Search Functionality" src="/assets/images/8.jpg">
-
-### Search Functionality
-
-<img alt="Search Functionality" src="/assets/images/9.jpg">
+</div>
 
 ## Running Locally
 
