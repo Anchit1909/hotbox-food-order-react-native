@@ -1,4 +1,4 @@
-<img alt="Groww Stonks - stocks/etfs broking website" src="/assets/images/1.jpg">
+<img alt="Groww Stonks - stocks/etfs broking website" src="/assets/images/1.jpg" width=40%>
   <h1 align="center">HotBox - Order Pizza Online</h1>
 
 <p align="center">
@@ -52,17 +52,23 @@ HotBox is an application to order pizza online. It lets admins create and update
 
 ## Screenshots
 
+### User Screen
+
 <div style="display: flex; flex-direction: 'row';">
 <img src="/assets/images/1.jpg" width=20%>
 <img src="/assets/images/2.jpg" width=20%>
 <img src="/assets/images/3.jpg" width=20%>
 <img src="/assets/images/4.jpg" width=20%>
 <img src="/assets/images/5.jpg" width=20%>
+</div>
+
+### Admin Screen
+
+<div style="display: flex; flex-direction: 'row';">
 <img src="/assets/images/6.jpg" width=20%>
 <img src="/assets/images/7.jpg" width=20%>
 <img src="/assets/images/8.jpg" width=20%>
 <img src="/assets/images/9.jpg" width=20%>
-
 </div>
 
 ## Running Locally
