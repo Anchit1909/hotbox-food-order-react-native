@@ -1,7 +1,4 @@
-<div style="display: flex; align-items: 'center'; justify-content: 'center';">
-  <img alt="Groww Stonks - stocks/etfs broking website" src="/assets/images/1.jpg" width=40%>
-</div>
-  <h1 align="center">HotBox - Order Pizza Online</h1>
+<h1 align="center">HotBox - Order Pizza Online</h1>
 
 <p align="center">
   Order your favourite Pizzas online and get it delivered to your home.
@@ -41,6 +38,27 @@ HotBox is an application to order pizza online. It lets admins create and update
 - Realtime push notifications to alert the users of the status of their order.
 - Realtime push notifications to alert the admin when new orders are placed.
 
+## Screenshots
+
+### User Screen
+
+<div style="display: flex; flex-direction: 'row';">
+  <img src="/assets/images/1.jpg" width=20%>
+  <img src="/assets/images/2.jpg" width=20%>
+  <img src="/assets/images/3.jpg" width=20%>
+  <img src="/assets/images/4.jpg" width=20%>
+  <img src="/assets/images/5.jpg" width=20%>
+</div>
+
+### Admin Screen
+
+<div style="display: flex; flex-direction: 'row';">
+  <img src="/assets/images/6.jpg" width=20%>
+  <img src="/assets/images/7.jpg" width=20%>
+  <img src="/assets/images/8.jpg" width=20%>
+  <img src="/assets/images/9.jpg" width=20%>
+</div>
+
 ## Tech Stack
 
 - [Typescript](https://www.typescriptlang.org/)
@@ -51,27 +69,6 @@ HotBox is an application to order pizza online. It lets admins create and update
 - [Tanstack React Query](https://tanstack.com/query/latest)
 - [Stripe](https://stripe.com/)
 - [Expo Notifications](https://docs.expo.dev/push-notifications/overview/)
-
-## Screenshots
-
-### User Screen
-
-<div style="display: flex; flex-direction: 'row';">
-<img src="/assets/images/1.jpg" width=20%>
-<img src="/assets/images/2.jpg" width=20%>
-<img src="/assets/images/3.jpg" width=20%>
-<img src="/assets/images/4.jpg" width=20%>
-<img src="/assets/images/5.jpg" width=20%>
-</div>
-
-### Admin Screen
-
-<div style="display: flex; flex-direction: 'row';">
-<img src="/assets/images/6.jpg" width=20%>
-<img src="/assets/images/7.jpg" width=20%>
-<img src="/assets/images/8.jpg" width=20%>
-<img src="/assets/images/9.jpg" width=20%>
-</div>
 
 ## Running Locally
 
