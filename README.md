@@ -87,7 +87,7 @@ cp .env.example .env
 ### Get API Keys
 
 1. Create a Supabase account to get SUPABASE URL and SUPABASE ANON key.
-2. Create Stripe account to get API keys from stripe to process payments.
+2. Create a Stripe account to get API keys from stripe to process payments.
 
 ### Installing the dependencies.
 
