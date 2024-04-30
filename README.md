@@ -25,7 +25,7 @@
 
 ## Introduction
 
-HotBox is an application to order pizza online. It lets admins create and update new pizzas and lets users order their favourite pizza and check it's status as well. Realtime push notifications is integrated to update the users of the status of their order and alert admins when new orders are placed.
+HotBox is a React Native application for ordering pizza online. It allows admins to add and update pizzas, and enables users to order their favorite pizza and check its status in realtime. Real-time push notifications are integrated to update users on the status of their orders and to alert admins when new orders are placed.
 
 ## Features
 
