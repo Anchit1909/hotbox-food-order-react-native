@@ -52,43 +52,16 @@ HotBox is an application to order pizza online. It lets admins create and update
 
 ## Screenshots
 
-<div style="display: flex; flex-wrap: wrap;">
-
-  <div style="flex: 0 0 auto; margin-right: 10px;">
-    <img src="/assets/images/1.jpg" alt="Image 1" style="max-width: 50px; max-height: 50px;" />
-  </div>
-
-  <div style="flex: 0 0 auto; margin-right: 10px;">
-    <img alt="Company Details Page" src="/assets/images/2.jpg" style="max-width: 50px; max-height: 50px;">
-  </div>
-
-  <div style="flex: 0 0 auto; margin-right: 10px;">
-    <img alt="Line Chart" src="/assets/images/3.jpg" style="max-width: 50px; max-height: 50px;">
-  </div>
-
-  <div style="flex: 0 0 auto; margin-right: 10px;">
-    <img alt="Area Chart" src="/assets/images/4.jpg" style="max-width: 50px; max-height: 50px;">
-  </div>
-
-  <div style="flex: 0 0 auto; margin-right: 10px;">
-    <img alt="Search Functionality" src="/assets/images/5.jpg" style="max-width: 50px; max-height: 50px;">
-  </div>
-
-  <div style="flex: 0 0 auto; margin-right: 10px;">
-    <img alt="Search Functionality" src="/assets/images/6.jpg" style="max-width: 50px; max-height: 50px;">
-  </div>
-
-  <div style="flex: 0 0 auto; margin-right: 10px;">
-    <img alt="Search Functionality" src="/assets/images/7.jpg" style="max-width: 50px; max-height: 50px;">
-  </div>
-
-  <div style="flex: 0 0 auto; margin-right: 10px;">
-    <img alt="Search Functionality" src="/assets/images/8.jpg" style="max-width: 50px; max-height: 50px;">
-  </div>
-
-  <div style="flex: 0 0 auto; margin-right: 10px;">
-    <img alt="Search Functionality" src="/assets/images/9.jpg" style="max-width: 50px; max-height: 50px;">
-  </div>
+<div style="display: flex; flex-direction: 'row';">
+<img src="/assets/images/1.jpg" width=20%>
+<img src="/assets/images/2.jpg" width=20%>
+<img src="/assets/images/3.jpg" width=20%>
+<img src="/assets/images/4.jpg" width=20%>
+<img src="/assets/images/5.jpg" width=20%>
+<img src="/assets/images/6.jpg" width=20%>
+<img src="/assets/images/7.jpg" width=20%>
+<img src="/assets/images/8.jpg" width=20%>
+<img src="/assets/images/9.jpg" width=20%>
 
 </div>
 
