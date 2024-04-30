@@ -1,4 +1,6 @@
-<img alt="Groww Stonks - stocks/etfs broking website" src="/assets/images/1.jpg" width=40%>
+<div style="display: flex; align-items: 'center'; justify-content: 'center';">
+  <img alt="Groww Stonks - stocks/etfs broking website" src="/assets/images/1.jpg" width=40%>
+</div>
   <h1 align="center">HotBox - Order Pizza Online</h1>
 
 <p align="center">
